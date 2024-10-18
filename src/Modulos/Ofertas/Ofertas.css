@@ -1,0 +1,37 @@
+main {
+    position: relative;
+    /* Necesario para que el pseudo-elemento se posicione correctamente */
+    height: 600px;
+    background-image: url("/Media/macumba.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    z-index: 1;
+    /* Asegura que el contenido esté por encima de la capa de opacidad */
+}
+
+main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Color negro con 50% de opacidad */
+    z-index: -1;
+    /* Coloca la capa detrás del contenido del main */
+}
+
+main h1{
+    font-size: 50px;
+}
+ 
+main p{
+    font-weight: bold;
+    font-size: 30px;
+}
